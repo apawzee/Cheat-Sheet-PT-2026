@@ -1,2 +1,0 @@
-# Pentest-Cheat-Sheet-
-Pentest Cheat Sheet 
