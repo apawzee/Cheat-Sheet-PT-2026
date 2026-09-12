@@ -1,4 +1,4 @@
-# 🛡️ Pentest Cheat Sheet — PT 2026
+# 🛡️ Cheat Sheet — PT 2026
 
 > Referensi sintaks penetration testing lengkap, disusun mengikuti alur kerja pentest standar.
 >
