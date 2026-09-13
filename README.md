@@ -52,6 +52,7 @@ Fase pengintaian: petakan permukaan serangan (attack surface) sebelum menyerang.
 ```bash
 # Ping sweep — cari host hidup di subnet
 nmap -sn 192.168.1.0/24
+nmap -Pn 192.168.1.0/24
 
 # Cek satu host hidup / latency
 nmap -sn <TARGET>
